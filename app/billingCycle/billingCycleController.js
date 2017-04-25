@@ -14,8 +14,8 @@
     vm.refresh = function() {
       const page = parseInt($location.search().page) || 1
       $http.get(`${url}?skip=${(page - 1) * 10}&limit=10`).then(function(response) {
-        /*vm.billingCycle = { credits: [{name: null, value: null}], debts: [{name: null, value: null, status: null}] }*/
-        vm.billingCycle = {credits: [{}], debts: [{}] }
+        vm.billingCycle = { credits: [{name: null, value: null}], debts: [{name: null, value: null, status: null}] }
+        /* vm.billingCycle = {credits: [{}], debts: [{}] } */
         vm.billingCycles = response.data
         vm.calculateValues()
 
